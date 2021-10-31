@@ -1,0 +1,68 @@
+bitrhythm:
+  username: Mediprimeadmin
+  password: PrimeKav@686868ieieie
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 300s
+      routes:
+        - id: bit-rythem-app
+          uri: https://app.bitrhythm.io
+          predicates:
+            - Path=/bitapp/**
+          filters:
+            - BitRythemFilter
+            - RewritePath=/bitapp/(?<path>.*), /$\{path}
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin      
+        - id: bit-rythem-service
+          uri: https://api.bitrhythm.io
+          predicates:
+            - Path=/bitr/**
+          filters:
+            - BitRythemFilter
+            - RewritePath=/bitr/(?<path>.*), /$\{path}
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: users-sePrvice
+          uri: lb://users-service
+          predicates:
+            - Path=/users/**
+          filters:
+            - RewritePath=/users/(?<path>.*), /$\{path}
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<path>.*), /$\{path}
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/client/**
+          filters:
+            - RewritePath=/client/(?<path>.*), /$\{path}
+        - id: documentation-app
+          uri: lb://documentation-app
+          predicates:
+            - Path=/swagger/**
+          filters:
+            - RewritePath=/swagger/(?<path>.*), /$\{path}
+        - id: serviceprovider-service
+          uri: lb://serviceprovider-service
+          predicates:
+            - Path=/serviceprovider/**
+          filters:
+            - RewritePath=/serviceprovider/(?<path>.*), /$\{path}
+        - id: misc-service
+          uri: lb://misc-service
+          predicates:
+            - Path=/misc/**
+          filters:
+              - RewritePath=/misc/(?<path>.*), /$\{path}
+        - id: apiintregration-service
+          uri: lb://apiintregration-service
+          predicates:
+            - Path=/apiintregration/**
+          filters:
+              - RewritePath=/apiintregration/(?<path>.*), /$\{path}
