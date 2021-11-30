@@ -51,6 +51,7 @@ cardio:
 #       secretKey: ENC(ZXq8wgUlcgQqH2Dl8BH0ydqqFOrujL9eJezMH41zKaLaIKoJGck4zMdsySb07BrR7YbR6OxTxlo=)
       port: 587
       host: email-smtp.ap-south-1.amazonaws.com
+      fromEmail: support@kavanant.com
     bucket: cardio-new-dev-assets
 jasypt:
  encryptor:
