@@ -3,7 +3,7 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: ${EDUCATION_EUREKA_SERVER:http://10.0.0.104:1337/eureka/}
+      defaultZone: http://localhost:1337/eureka/
     # improve refresh time
     registryFetchIntervalSeconds: 5
   # improve refresh time
@@ -24,9 +24,9 @@ jwt:
     
 spring:
   datasource:
-    url: jdbc:mysql://10.0.0.104:3306/holter?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
-    username: ${CARDIO_DB_USER}
-    password: ${CARDIO_DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/sample?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+    password: root
     platform: mysql
   jpa:
     hibernate:
