@@ -24,7 +24,13 @@ spring:
             - BitRythemFilter
             - RewritePath=/bitr/(?<path>.*), /$\{path}
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-        - id: users-sePrvice
+        - id: patient-service
+          uri: lb://patient-service
+          predicates:
+            - Path=/patient/**
+          filters:
+            - RewritePath=/patient/(?<path>.*), /$\{path}
+        - id: users-service
           uri: lb://users-service
           predicates:
             - Path=/users/**
@@ -48,6 +54,18 @@ spring:
             - Path=/swagger/**
           filters:
             - RewritePath=/swagger/(?<path>.*), /$\{path}
+        - id: eureka-app
+          uri: http://10.0.0.104:1337
+          predicates:
+            - Path=/eureka/**
+          filters:
+            - RewritePath=/eureka/(?<path>.*), /$\{path}
+        - id: config-app
+          uri: http://10.0.0.104:8888
+          predicates:
+            - Path=/config/**
+          filters:
+            - RewritePath=/config/(?<path>.*), /$\{path}
         - id: serviceprovider-service
           uri: lb://serviceprovider-service
           predicates:
@@ -66,3 +84,23 @@ spring:
             - Path=/apiintregration/**
           filters:
               - RewritePath=/apiintregration/(?<path>.*), /$\{path}
+        - id: master-service
+          uri: lb://master-service
+          predicates:
+            - Path=/master/**
+          filters:
+              - QueryTokenFilter
+              - RewritePath=/master/(?<path>.*), /$\{path}
+        - id: chat-service
+          uri: lb://chat-service
+          predicates:
+            - Path=/chat/**
+          filters:
+              - RewritePath=/chat/(?<path>.*), /$\{path}
+        - id: cardio-service
+          uri: lb://cardio-service
+          predicates:
+            - Path=/cardio/**
+          filters:
+              - QueryTokenFilter
+              - RewritePath=/cardio/(?<path>.*), /$\{path}
