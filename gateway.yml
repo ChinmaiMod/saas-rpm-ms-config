@@ -55,13 +55,13 @@ spring:
           filters:
             - RewritePath=/swagger/(?<path>.*), /$\{path}
         - id: eureka-app
-          uri: http://10.0.0.104:1337
+          uri: http://localhost:1337
           predicates:
             - Path=/eureka/**
           filters:
             - RewritePath=/eureka/(?<path>.*), /$\{path}
         - id: config-app
-          uri: http://10.0.0.104:8888
+          uri: http://localhost:8888
           predicates:
             - Path=/config/**
           filters:
@@ -89,7 +89,6 @@ spring:
           predicates:
             - Path=/master/**
           filters:
-              - QueryTokenFilter
               - RewritePath=/master/(?<path>.*), /$\{path}
         - id: chat-service
           uri: lb://chat-service
@@ -102,5 +101,4 @@ spring:
           predicates:
             - Path=/cardio/**
           filters:
-              - QueryTokenFilter
               - RewritePath=/cardio/(?<path>.*), /$\{path}
