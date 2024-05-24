@@ -89,6 +89,7 @@ spring:
           predicates:
             - Path=/master/**
           filters:
+              - QueryTokenFilter
               - RewritePath=/master/(?<path>.*), /$\{path}
         - id: chat-service
           uri: lb://chat-service
@@ -101,4 +102,5 @@ spring:
           predicates:
             - Path=/cardio/**
           filters:
+              - QueryTokenFilter
               - RewritePath=/cardio/(?<path>.*), /$\{path}
