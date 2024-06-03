@@ -24,7 +24,7 @@ jwt:
     
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/rpm?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false?zeroDateTimeBehavior=round
+    url: jdbc:mysql://localhost:3306/rpm?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=round
     username: root
     password: root
     platform: mysql
