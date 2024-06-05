@@ -47,9 +47,12 @@ holter:
 cardio:
   config:
     aws:
-      region: ap-south-1
-      accessKey: ENC(5LPEc5Qt/h/WhX9g01UgvRyPmd+MxQzT2MletVYQ02U=)
-      secretKey: ENC(n4pwMuEvx97LgwfHl6FyKKGj4H9YVgtJvmHw8qXFrvJyv/19GKHMDij/CJqPBYr2wsUwlKYhI48=)
+      # region: ap-south-1
+      region: us-east-2
+      # accessKey: ENC(5LPEc5Qt/h/WhX9g01UgvRyPmd+MxQzT2MletVYQ02U=)
+      # secretKey: ENC(n4pwMuEvx97LgwfHl6FyKKGj4H9YVgtJvmHw8qXFrvJyv/19GKHMDij/CJqPBYr2wsUwlKYhI48=)
+      accessKey: AKIA33VK3T5AKYFO6SJI
+      secretKey: 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
     ses:
       region: ap-south-1
       accessKey: ENC(crdoHqXGiU43p+esD/L0VRs1QvKBSCA5oK1myOiXkzc=)
@@ -57,7 +60,7 @@ cardio:
       port: 587
       host: email-smtp.ap-south-1.amazonaws.com
       fromEmail: support@kavanant.com
-    bucket: cardio-new-dev-assets
+    bucket: cardio-new-dev-asset
 jasypt:
  encryptor:
   password: Cardio-Secret-!290Dev
