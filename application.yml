@@ -33,6 +33,11 @@ spring:
       ddl-auto: 
   main:
     allow-bean-definition-overriding: true
+  cloud:
+    config:
+      allowOverride: true
+      overrideNone: true
+      overrideSystemProperties: false
 
 holter:
   apigateway:
@@ -56,7 +61,7 @@ cardio:
 jasypt:
  encryptor:
   password: Cardio-Secret-!290Dev
-  
+
  
 
 management:
