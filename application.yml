@@ -51,8 +51,8 @@ cardio:
       region: us-east-2
       # accessKey: ENC(5LPEc5Qt/h/WhX9g01UgvRyPmd+MxQzT2MletVYQ02U=)
       # secretKey: ENC(n4pwMuEvx97LgwfHl6FyKKGj4H9YVgtJvmHw8qXFrvJyv/19GKHMDij/CJqPBYr2wsUwlKYhI48=)
-      accessKey: AKIA33VK3T5AKYFO6SJI
-      secretKey: 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
+      accessKey: ENC(oQNUAKhDS+Tscf8mtaLN6k9CCZ9Vkvgvi9pIURzQKRg=)
+      secretKey: ENC(jWwHBCvuOZRj5h3n9ZXhODcb9bFZW1Oqbr9d+tX2Oq5ZNCC+YFUo5OT3s0pGrd3dhbIPUEzlGJQ=)
     ses:
       region: ap-south-1
       accessKey: ENC(crdoHqXGiU43p+esD/L0VRs1QvKBSCA5oK1myOiXkzc=)
@@ -61,9 +61,13 @@ cardio:
       host: email-smtp.ap-south-1.amazonaws.com
       fromEmail: support@kavanant.com
     bucket: cardio-new-dev-asset
+# jasypt:
+#  encryptor:
+#   password: Cardio-Secret-!290Dev
+
 jasypt:
  encryptor:
-  password: Cardio-Secret-!290Dev
+  password: sample1234
 
  
 
