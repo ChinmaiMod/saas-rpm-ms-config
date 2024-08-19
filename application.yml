@@ -24,9 +24,9 @@ jwt:
     
 spring:
   datasource:
-    url: jdbc:mysql://database-1.cvcsguokyw68.us-east-1.rds.amazonaws.com:3306/rpm?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=round
-    username: admin
-    password: rpmcinch
+    url: jdbc:mysql://localhost:3306/rpm_backup?autoReconnect=true&serverTimezone=UTC&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=round
+    username: root
+    password: root
     platform: mysql
   jpa:
     hibernate:
@@ -53,13 +53,13 @@ cardio:
       # secretKey: ENC(n4pwMuEvx97LgwfHl6FyKKGj4H9YVgtJvmHw8qXFrvJyv/19GKHMDij/CJqPBYr2wsUwlKYhI48=)
       accessKey: ENC(oQNUAKhDS+Tscf8mtaLN6k9CCZ9Vkvgvi9pIURzQKRg=)
       secretKey: ENC(jWwHBCvuOZRj5h3n9ZXhODcb9bFZW1Oqbr9d+tX2Oq5ZNCC+YFUo5OT3s0pGrd3dhbIPUEzlGJQ=)
-    ses:
-      region: ap-south-1
-      accessKey: ENC(crdoHqXGiU43p+esD/L0VRs1QvKBSCA5oK1myOiXkzc=)
-      secretKey: ENC(ZXq8wgUlcgQqH2Dl8BH0ydqqFOrujL9eJezMH41zKaLaIKoJGck4zMdsySb07BrR7YbR6OxTxlo=)
-      port: 587
-      host: email-smtp.ap-south-1.amazonaws.com
-      fromEmail: support@kavanant.com
+#    ses:
+#      region: ap-south-1
+#      accessKey: ENC(crdoHqXGiU43p+esD/L0VRs1QvKBSCA5oK1myOiXkzc=)
+#      secretKey: ENC(ZXq8wgUlcgQqH2Dl8BH0ydqqFOrujL9eJezMH41zKaLaIKoJGck4zMdsySb07BrR7YbR6OxTxlo=)
+#      port: 587
+#      host: email-smtp.ap-south-1.amazonaws.com
+#      fromEmail: support@kavanant.com
     bucket: cardio-new-dev-asset
 # jasypt:
 #  encryptor:
